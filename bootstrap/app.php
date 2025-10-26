@@ -1,19 +1,18 @@
 <?php
 
 use Illuminate\Foundation\Application;
-use Illuminate\Contracts\Console\Kernel as ConsoleKernel;
-use Illuminate\Contracts\Http\Kernel as HttpKernel;
-use Illuminate\Contracts\Debug\ExceptionHandler;
-use App\Http\Kernel;
-use App\Console\Kernel as ConsoleAppKernel;
-use App\Exceptions\Handler;
+use Illuminate\Foundation\Configuration\Exceptions;
+use Illuminate\Foundation\Configuration\Middleware;
 
-$app = new Application(
-    $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
-);
-
-$app->singleton(HttpKernel::class, Kernel::class);
-$app->singleton(ConsoleKernel::class, ConsoleAppKernel::class);
-$app->singleton(ExceptionHandler::class, Handler::class);
-
-return $app;
+return Application::configure(basePath: dirname(__DIR__))
+    ->withRouting(
+        web: __DIR__.'/../routes/web.php',
+        commands: __DIR__.'/../routes/console.php',
+        health: '/up',
+    )
+    ->withMiddleware(function (Middleware $middleware): void {
+        //
+    })
+    ->withExceptions(function (Exceptions $exceptions): void {
+        //
+    })->create();
