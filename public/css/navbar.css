@@ -1,0 +1,62 @@
+    /* Fondo */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #004d40, #00695c, #004d40);   
+      height: 100vh;
+    }
+
+    /* Barra de navegación */
+    .navbar {
+      background: #111;
+      border-radius: 8px;
+      display: flex;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    .navbar a {
+      flex: 1;
+      text-align: center;
+      color: #ccc;
+      text-decoration: none;
+      padding: 12px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: all 0.3s ease;
+      border-right: 1px solid #222;
+    }
+
+    .navbar a:last-child {
+      border-right: none;
+    }
+
+    .navbar a span {
+      font-size: 11px;
+      color: #ff944d; /* subtítulo en naranja */
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      background: #333;
+      color: #fff;
+    }
+
+    .navbar a:hover span,
+    .navbar a.active span {
+      color: #fff;
+    }
+
+  .contenedor {
+    background-color: #b6f0b6; /* Verde claro */
+    border-radius: 15px;       /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    margin-left: 6%; 
+    margin-right: 6%; 
+    margin-top: 15px;             
+    padding: 20px;             /* Espacio interno */
+    display: flex;             /* Activa el modo flex */
+    flex-wrap: wrap;           /* Permite que los elementos se ajusten */
+  }

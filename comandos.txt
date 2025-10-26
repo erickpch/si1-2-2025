@@ -1,0 +1,11 @@
+docker-compose up -d --build
+
+docker-compose up -d //levanta el servicio
+docker-compose down //apagar el servicio
+
+
+docker-compose logs "nombre contenedor"
+
+docker-compose exec app bash
+
+php artisan migrate:fresh --seed
